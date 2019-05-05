@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>안내를하자</h1>
+        <div>
+        {% for obj in kidszones %}
+            {% if obj.title %}
+                <div class="card" style="width: 25rem;">
+                    <img src="..." class="card-img-top" alt="정보">
+                    <div class="card-body">
+                    <h2>이름: {{ obj.title }}</h2>
+                    <p class="card-text">위치 : {{ obj.location }}</p>
+                    <p class="card-text">소개 : {{ obj.description }}</p>
+                    <a href="#">자세히 보기</a>
+                    <a href="#">댓글 달기</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+        
+        <a href="{% url 'create' %}">생성하기</a>
+
+{% endblock %}

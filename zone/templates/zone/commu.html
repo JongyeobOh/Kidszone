@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+
+{% block commu %}
+ <!DOCTYPE html>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  margin-top: 80px;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.con {
+     display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: center;
+		justify-content: center;
+		
+}
+.con > div {
+    background-color: white;
+		margin-top: 100px;
+		padding: 50px;
+		height : auto;
+		width : 700px;
+		opacity: 0.8;
+        filter: alpha(opacity=60);
+        color: black;
+        font-weight: bold;
+}
+
+card-body{
+      width: 500px;
+    }
+</style>
+    
+<div class="sidenav">
+  <a href= "{% url 'commu' %}">자유 게시판</a>
+  <a href="{% url 'notice' %}">공지사항</a>
+  <a href="{% url 'Q_A' %}">Q&A</a>
+</div>
+
+
+  <div class = "con">
+        <div>
+            {% for item in board %}
+            <div class="card w-70" >
+                <div>
+              <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+                <a href="{% url 'board' %}" class="btn btn-primary">글 쓰기</a>
+              </div>
+              </div>
+            </div><br><br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock commu %}
+
+
+
+
+
+
+
+
+{% block content %}
+
+
+
+<div class="main">
+  <h2>자유게시판</h2>
+  <p>자유롭게 이야기를 나눌 수 있는 공간입니다.</p>
+  
+  
+</div>
+
+
+
+
+
+
+{% endblock content %}
