@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<form action="{% url 'co_update' review.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <label>제목</label><br>
+        <input type="text" name="title" value="{{ review.title }}" required><br><br>
+                    
+        <label>작성자</label><br>
+        <input type="text" name="writer" value="{{ review.writer}}" required><br><br>
+                    
+        <label>사진 :</label> 
+        <input type="file"  alt="" width="200" height="100" name="image" ><br><br>            
+                    
+                    
+        <label>후기</label><br>
+        <textarea name="your_review" cols = "40" rows = "3" required>{{ review.your_review }}</textarea><br>
+        
+        
+        <label>비밀번호</label><br>
+        <input type="password" name="password" required><br><br>
+    <br>
+    <input type="submit" class="btn btn-outline-dark" value="업데이트 하기!!">
+</form>
+
+
+
+{% endblock %}

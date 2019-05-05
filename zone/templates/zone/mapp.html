@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<body>
+    
+    <br>
+    <div style="text-align: center; font-family: 'yg-jalnan'">
+        <h1>한 눈에 보는 WELCOME, KIDSZONE!</h1>
+    </div>
+    
+    <div style="text-align: center;">
+        <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+            codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+            WIDTH="400" HEIGHT="300" id="sample1" ALIGN="">
+            
+            <PARAM NAME=movie VALUE="sample1.swf">
+            <PARAM NAME=quality VALUE=high>
+            <PARAM NAME=bgcolor VALUE=#FFFFFF>
+            <EMBED src="../../static/image/서울시_지도.swf" quality=high bgcolor=#FFFFFF  WIDTH="800" HEIGHT="800" NAME="서울시_지도" ALIGN=""
+            TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer">
+            </EMBED>
+    </div>
+</body>
+
+
+
+{% endblock %}

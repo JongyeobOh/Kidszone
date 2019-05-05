@@ -1,8 +1,31 @@
 {% extends 'base.html' %}
-
-
+{% load static %}
 {% block content %}
 
+<div style="text-align: center; font-family: 'yg-jalnan'">
+<h1>수정을 하자</h1>
+
+<form action="{% url 'update' kidszone.pk %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <label>이름</label><br>
+        <input type="text" name="title" value="{{ kidszone.title }}" required><br><br>
+                    
+        <label>위치</label><br>
+        <input type="text" name="location" value="{{ kidszone.location }}" required><br><br>
+                    
+        <label>설명</label><br>
+        <textarea name="description" cols = "40" rows = "3" required>{{ kidszone.description }}</textarea><br>
+        
+        <label>사진 :</label> 
+        <input type="file"  alt="" width="200" height="100" name="image_upload" ><br><br>  
+        
+        <label>비밀번호</label><br>
+        <input type="password" name="password" required><br><br>
+    <br>
+    <input type="submit" class="btn btn-outline-dark" value="업데이트 하기!!">
+</form>
+
+</div>
 
 
 {% endblock %}

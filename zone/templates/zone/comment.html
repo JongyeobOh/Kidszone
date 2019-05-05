@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <thead class="th">
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for adj in reviews %}
+            <tr>
+                <td>{{ adj.pk }}</td>
+                <td>
+                <a href="{% url 'co_show' id=adj.id %}">{{ adj.title }}</a>
+                </td> 
+                <td>{{ adj.writer }}</td>
+                <td>{{ adj.created_at }}</td>     
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form action="{% url 'co_create' kidszoneid %}" method="GET">
+
+        <button type="submit">후기 작성하기</button>
+    </form>
+
+</div> 
+
+
+
+{% endblock %}

@@ -2,44 +2,54 @@
 
 
 {% block content %}
+
+<style>
+  .carousel-caption{
+    z-index: 0;
+  }
+</style>
   <!-- 사진 넘어가며 홈페이지 소개 -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 10px;">
+      <ol class="carousel-indicators" style="z-index: 5;">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://www.acs.org/content/acs/en/education/outreach/acs-kids-zone/_jcr_content/articleContent/columnsbootstrap/column1/image.img.png/1499880108733.png" height="500">
+      <div class="carousel-inner center_c">
+        <div class="carousel-item active" style="text-align:center; padding-right: 400px;">
+          <img src="/static/image/kidszone.jpg" height="500">
           <div class="container">
             <div class="carousel-caption text-right">
               <span style="color:black">
-              <h1>What is Welcome Kids Zone?</h1>
-              <p>About our service</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1><b>웰컴키즈존 지도 보기</b></h1>
+              <p>더 많은 웰컴키즈존을 찾아보세요!</p>
+              <p><a class="btn btn-lg btn-primary" href="{% url 'mapp' %}" role="button">찾아보기</a></p>
             </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="http://www.rubella.eu/images/series/series_big_82.jpg" height="500">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Baby Care Information</h1>
-              <p><b>A Guide for Parents.</b></p>
+        <div class="carousel-item center_c" style="text-align:center; padding-left: 20%;
+    background-color: #000000;
+    padding-right: 20%;">
+            <img src="/static/image/babycare.jpg" height="500">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1><b>육아 정보</b></h1>
+                <p><b>누구나 처음은 어려워요.</b></p>
               </span>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Parenting Resources</a></p>
+              <p><a class="btn btn-lg btn-primary" href="https://welcome-ojongy.c9users.io/zone/babyinfo/" role="button">육아정보 검색</a></p>
             </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="https://www.gov.mb.ca/healthychild/images/random/hdr8.jpg" height="500">
+        <div class="carousel-item center_c" style="text-align:center;     padding-left: 35%;
+    background-color: #000000;
+    padding-right: 15%;">
+          <img src="/static/image/community.jpg" height="500" >
           <div class="container">
-            <div class="carousel-caption text-right">
-              <span style="color:black">
-              <h1> Community </h1>
-              <p> Meet Other Parents </p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse Community</a></p>
+            <div class="carousel-caption text-left">
+              <span style="color:#FFFFFF">
+              <h1><b>커뮤니티 </b></h1>
+              <p>육아하는 사람들의 소통공간 </p>
+              <p><a class="btn btn-lg btn-primary" href="https://welcome-ojongy.c9users.io/zone/commu/" role="button">커뮤니티로 이동</a></p>
             </div>
           </div>
         </div>
@@ -53,6 +63,68 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+
+
+    <!-- 웰컴키즈존 설명 -->
+  <main role="main">
+   
+    
+     <div class="jumbotron" style="margin-bottom: 0px;">
+       <div class="col-sm-8 mx-auto main1 container main1 text-center">
+         <p class="title_in_main">NO MORE NO KIDS ZONE</p>
+         <p class="quotation_in_main">흡연같은 경우 흡연이라는 행위를 금지하듯, 일반적으로 출입제한이나 규제는 특정한 사물이나 행동을 대상으로 하는 경우가 대부분입니다. 하지만 노키즈존은 구체적인 행위를 제한하는 것이 아닌 아이 전체를 통제와 배제의 대상으로 간주하고 사전 차단하는 것에서 기본권을 침해한다는 견해가 있다.</p>
+         <p class="under_quotation">김도균, 유보배. (2016). 노키즈존 확산, 어떻게 볼 것인가?</p>&nbsp;
+         <p class="lead text-muted">키즈, 웰컴 -
+         <a href="https://welcome-ojongy.c9users.io/zone/intro/">웰컴키즈존 안내</a>,
+         <a href="https://welcome-ojongy.c9users.io/zone/babyinfo/">육아정보</a>,
+         <a href="https://welcome-ojongy.c9users.io/zone/commu/">커뮤니티</a> 등을 이용할 수 있습니다.</p>&nbsp;
+         <p>
+           <a class="btn btn-primary" href="https://welcome-ojongy.c9users.io/zone/intro" role="button">더 많은 웰컴키즈존을 확인해보세요! &raquo;</a>
+         </p>
+       </div>
+     </div>
+     
+      <div class="container" style="text-align: center;
+          background-color: #FFFFFF;
+          padding-top: 10px;
+          padding-bottom: 10px; 
+          display: flex;
+          justify-content: center;
+          height:200px;
+          align-items: center;">
+        <img src="/static/image/baby.png" alt="">
+        <div style="display: inline-block;">
+    <h1 style="color: #52c1e4;
+          display: inline;">    Kids,</h1>
+    <h1 style="color: #f4bc1b;
+          display: inline;"> Welcome!     </h1>
+          </div>
+        <img src="/static/image/baby.png" alt="">
+    </div>
+
+     <section class="jumbotron text-center main2">
+      <div class="container">
+        <div style="display: flex;
+    justify-content: center;
+    align-items: center; margin-bottom: 20px;">
+        <img src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Food-512.png" alt="" style="width: 30px; margin: 3px;">
+        <h1 class="jumbotron-heading title_in_main" style="display: inline-block; margin-bottom: 0px;">식당 에티켓</h1><img src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Food-512.png" alt="" style="width: 30px; margin: 3px;">
+        </div>
+        <p class="lead text-muted"> 1. 뛰어다니거나 돌아다니지 않습니다.</p>
+        <p class="lead text-muted"> 2. 소리지르지 않습니다.</p>
+        <p class="lead text-muted"> 3. 식당 물건이나 다른 손님 물건을 만지지 않습니다.</p>
+        <p class="lead text-muted"> 4. 잔반을 남기지 않습니다.</p>
+        <p>
+          <a href="https://welcome-ojongy.c9users.io/zone/commu/" class="btn btn-secondary my-2">커뮤니티로 이동</a>
+        </p>
+    </div>
+    </section>
+   </main>
+ </div>
+
+  </body>
+</html>
+
 
 
 

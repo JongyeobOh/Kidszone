@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+  modal:hover{color: yellow;}
+  
+  html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .totalmodal {
+    background: url('{% static "image/background.png" %}');
+    background-size: cover;
+  }
+</style>
+<div  class=totalmodal>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary button_yet" onMouseOver="this.style.backgroundColor='#FFE484'"  data-toggle="modal" data-target="#exampleModal1" >
+  아이가 어리다면?
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel1">아이가 어리다면?</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body1" style="padding: 20px">
+        아이가 어리다면, 영유아 관련 모든 정책과 정보를 제공하는 보건복지부 사이트 (www.mw.go.kr)을 추천합니다. 임신출산진료비, 영유아, 진료가능 병원 검색등의 정보와 서비스 제공 기관의 정보를 제공하고 있습니다.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">창닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary button_yet" onMouseOver="this.style.backgroundColor='#FFE484'" data-toggle="modal" data-target="#exampleModal2">
+  아이를 맡길 곳이 필요하다면?
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">아이를 맡길곳이 필요하다면?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body2" style="padding: 20px">
+        아이를 맡길 곳이 필요하다면, 여성가족부에서 운영하는 https://www.idolbom.go.kr/home.go 사이트를 추천합니다. 아이돌봄지원사업에 대한 정보 및 신청을 지원합니다. 갑자기 급한 상황에 놓였을 때,잠시 아이를 맡길 곳이 필요할때 시간제보육지원사업을 통해 기관에 아이를 맡길 수 있고, 아이돌봄지원사업을 통해 가정으로 아동돌보미가 오도록 신청할 수 있습니다. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">창닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary  button_yet" onMouseOver="this.style.backgroundColor='#FFE484'" data-toggle="modal" data-target="#exampleModal3">
+  아빠를 위한 정보를 찾는다면?
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel3">아빠를 위한 정보를 찾는다면?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-body3" style="padding: 20px">
+        아이를 위한 정보를 찾는 아빠라면, 아빠넷 (www.papanet4you.kr/1350)을 추천합니다. 아빠육아와 관련한 정책 정보, 맞춤형 육아정보와 아빠 심리지원을 제공합니다.
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">창닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary button_yet" onMouseOver="this.style.backgroundColor='#FFE484'" data-toggle="modal" data-target="#exampleModal4">
+  임신과 출산 직후 필요한 정보를 찾는다면?
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel4">임신과 출산 직후 필요한 정보를 찾는다면?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body4" style="padding: 20px">
+        임신과 출산 직후 필요한 정보를 찾는다면, 매일유업에서 만든 임신육아포털 매일아이(www.mailei.co,)를 추천합니다. 출산용품을 담은 마더박스를 받을 수 있고, 분유와 아이의 발달에 대한 정보를 얻을 수 있으며, 다양한 체험단을 모집합니다.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">창닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary button_yet" onMouseOver="this.style.backgroundColor='#FFE484'"  data-toggle="modal" data-target="#exampleModal5" >
+  새로운 장난감이 필요하다면?
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe5" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel5">새로운 장난감이 필요하다면?</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body5" style="padding: 20px">
+        금방 자라는 아이들에게 매번 새 장난감을 사주기는 어려울 때, 추천하는 장난감 도서관(https://www.seoultoy.or.kr/new/main/index.php). 안 쓰는 장난감을 기부하고 기부된 장난감을 빌려쓰고, 심지어 망가진 장난감을 고쳐 쓸 수 있다. 현재 전국 150여 개의 장난감 도서관이 운영되며, 그 외에도 다양한 문화생활을 즐길 수 있다.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal5">창닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary button_yet" onMouseOver="this.style.backgroundColor='#FFE484'"  data-toggle="modal" data-target="#exampleModal6" >
+  아이들 필수 영양소가 궁금하다면?
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe6" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel6">아이들 필수 영양소가 궁금하다면?</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body6" style="padding: 20px">
+        아이들의 필수 영양소가 궁금하다면 매일유업에서 만든 임신육아포털 매일아이(www.mailei.co,)를 추천합니다.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal6">창닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary button_yet" onMouseOver="this.style.backgroundColor='#FFE484'"  data-toggle="modal" data-target="#exampleModal7" >
+  어머니를 위한 산후조리원 스마트하게 비교하자!
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe7" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel7">어머니를 위한 산후조리원 스마트하게 비교하자!?</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body7" style="padding: 20px">
+        산후조리원의 가격과 위치를 비교할 수 있는 사이트 배내테일을 추천드립니다! (https://www.benetale.com/bbs/board.php?bo_table=carecenter)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal7">창닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+</div>
+
+{% endblock content %}

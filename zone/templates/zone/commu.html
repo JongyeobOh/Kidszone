@@ -4,29 +4,45 @@
 {% block commu %}
  <!DOCTYPE html>
 <style>
-body {
-  font-family: "Lato", sans-serif;
-}
+
 
 .sidenav {
-  margin-top: 80px;
+  margin-top: 250px;
   height: 100%;
-  width: 200px;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: white;
   overflow-x: hidden;
   padding-top: 20px;
 }
 
 .sidenav a {
-  padding: 6px 6px 6px 32px;
+  padding: 16px 6px 6px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 20px;
+  color: blue;
   display: block;
+  font-family: "yg-jalnan";
+}
+.button {
+  /* Green */
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  
+  cursor: pointer;
+  border-radius: 18px;
+  width:200px;
+  height: 80px;
+  background-color: #FFE484;
+  margin: 10px 0px;
+  color: blue;
+  
 }
 
 .sidenav a:hover {
@@ -34,7 +50,14 @@ body {
 }
 
 .main {
-  margin-left: 200px; /* Same as the width of the sidenav */
+  margin-left: 300px; /* Same as the width of the sidenav */
+  margin-top:80px;
+  font-family: "yg-jalnan";
+  border: 2px solid #FFE484;
+  border-radius: 12px;
+  height:700px;
+  width:900px;
+  justify-content: center;
 }
 
 
@@ -43,53 +66,18 @@ body {
   .sidenav a {font-size: 18px;}
 }
 
-.con {
-     display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-content: center;
-		justify-content: center;
-		
-}
-.con > div {
-    background-color: white;
-		margin-top: 100px;
-		padding: 50px;
-		height : auto;
-		width : 700px;
-		opacity: 0.8;
-        filter: alpha(opacity=60);
-        color: black;
-        font-weight: bold;
-}
 
-card-body{
-      width: 500px;
-    }
+    
 </style>
     
 <div class="sidenav">
-  <a href= "{% url 'commu' %}">자유 게시판</a>
-  <a href="{% url 'notice' %}">공지사항</a>
-  <a href="{% url 'Q_A' %}">Q&A</a>
+  <a href= "{% url 'commu' %}"><button class="button">자유 게시판</button></a>
+  <a href="{% url 'notice' %}"><button class="button">공지사항</button></a>
+
 </div>
 
 
-  <div class = "con">
-        <div>
-            {% for item in board %}
-            <div class="card w-70" >
-                <div>
-              <div class="card-body">
-                <h5 class="card-title">{{ item.title }}</h5>
-                <p class="card-text">{{ item.description }}</p>
-                <a href="{% url 'board' %}" class="btn btn-primary">글 쓰기</a>
-              </div>
-              </div>
-            </div><br><br>
-            {% endfor %}
-        </div>
-    </div>
+ 
 {% endblock commu %}
 
 
@@ -100,19 +88,93 @@ card-body{
 
 
 {% block content %}
+ <!DOCTYPE html>
+<style>
+.con {
+     display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: start;
+		justify-content: start;
+		margin-left : 100px;
+		
+}
+.con > div {
+    background-color: white;
+		margin: 0px;
+		padding: 0px;
+		height : 30px;
+		width : 700px;
+		opacity: 0.8;
+        filter: alpha(opacity=60);
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+}
 
+
+.card-body{
+        display: flex;
+        justify-content : space-between;
+        margin: 10px;
+		    padding: 0px;
+    }
+.side1{
+  padding :50px;
+  padding-left:100px;
+  
+}
+.but{
+    
+  /* Green */
+  border: none;
+  justify-content:end;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right:30%;
+  padding-top:7px;
+  cursor: pointer;
+  border-radius: 18px;
+  width:80px;
+  height: 40px;
+  background-color: #FFE484;
+ 
+  color: blue;
+  
+
+    
+}
+</style>
 
 
 <div class="main">
-  <h2>자유게시판</h2>
-  <p>자유롭게 이야기를 나눌 수 있는 공간입니다.</p>
+  <div class="side1">
+    <h2>자유게시판</h2>
+    <p>자유롭게 이야기를 나눌 수 있는 공간입니다.</p>
+  <a class="but" href="{% url 'board' %}" >글쓰기</a>
   
-  
+  </div>
+
+
+
+ <div class = "con">
+        <div>
+            {% for item in boards %}
+            <div class="card w-70" >
+                <div>
+                    <a href= "{% url 'detail' item.id %}">
+              <div class="card-body" >
+                
+                <p class="card-text">{{ item.title }}</p>
+                <p class="card-text">{{ item.nick }}</p>
+              </div></a>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
 </div>
-
-
-
-
-
 
 {% endblock content %}

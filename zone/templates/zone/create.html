@@ -1,24 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-    <h1>키즈존 입력</h1>
-    <form action="{% url 'create' %}" method="POST">
+<div style="text-align: center; font-family: 'yg-jalnan'">
+    <fieldset>
+    <legend><h1>키즈존 입력</h1></legend>
+    <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <label>키즈존 이름</label><br>
-        <input type="text" name="title"><br><br>
+        <input type="text" name="title" required><br><br>
         
         <label>장소</label><br>
-        <input type="text" name="location"><br><br>
+        <input type="text" name="location" required><br><br>
         
         <label>설명</label><br>
-        <textarea name="description"></textarea><br>
+        <textarea name="description" required></textarea><br>
         
-     <!--   <label>사진</label><br>
-        <input type="image" src="{% url 'intro' %}" alt="" width="200" height="100" name="upload"><br><br> -->
+        <label>비밀번호</label><br>
+        <input type="password" name="password" required><br><br>
+        
+         <labels>사진</label>
+        <input type="file"  alt="" width="200" height="100" name="image_upload" ><br><br>
         
         <input type="submit" class="btn btn-primary" value="등록">
     </form>
-
+    </fieldset>
+</div>
 
 {% endblock %}

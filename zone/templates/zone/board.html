@@ -1,42 +1,66 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
 
 
 {% block commu %}
  <!DOCTYPE html>
 <style>
-body {
-  font-family: "Lato", sans-serif;
-}
-
 .sidenav {
-  margin-top: 80px;
+  margin-top: 250px;
   height: 100%;
-  width: 200px;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: white;
   overflow-x: hidden;
   padding-top: 20px;
 }
 
 .sidenav a {
-  padding: 6px 6px 6px 32px;
+  padding: 16px 6px 6px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 20px;
+  color: blue;
   display: block;
+  font-family: "yg-jalnan";
+}
+.button {
+  /* Green */
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  
+  cursor: pointer;
+  border-radius: 18px;
+  width:200px;
+  height: 80px;
+  background-color: #FFE484;
+  margin: 10px 0px;
+  color: blue;
+  
 }
 
 .sidenav a:hover {
   color: #f1f1f1;
 }
 
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
+ .main {
+  padding:50px;
+  margin-left: 300px; /* Same as the width of the sidenav */
+  margin-top:80px;
+  border: 2px solid #FFE484;
+  border-radius: 12px;
+  height:700px;
+  width:900px;
+  justify-content: center;
+  font-family: "yg-jalnan";
 }
-
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -45,31 +69,41 @@ body {
 </style>
     
 <div class="sidenav">
-  <a href= "{% url 'commu' %}">자유 게시판</a>
-  <a href="{% url 'notice' %}">공지사항</a>
-  <a href="{% url 'Q_A' %}">Q&A</a>
+  <a href= "{% url 'commu' %}"><button class="button">자유 게시판</button></a>
+  <a href="{% url 'notice' %}"><button class="button">공지사항</button></a>
+  
 </div>
+
 {% endblock commu %}
-
-
-
-
 
 
 {% block content %}
 
+<div class ="main">
+    <br><br>
+    <h2>자유게시판</h2>
+    <br>
+    <form action="{% url 'board' %}" method="POST">
+        {% csrf_token %}
+        <label>닉네임</label><br>
+        <input type="text" name="nick"><br><br>
+        
+        <label>제목</label><br>
+        <input type="text" name="title"><br><br>
+        
+        <label>정보공유나 하고 싶으신 말 나누어 주세요!</label><br>
+        <textarea name="description"></textarea><br><br>
+        
+        <label>비밀번호</label><br>
+        <input type="password" name="password"><br><br>
+        
+        
+        <input type="submit" class="btn btn-primary" value="등록"><br><br>
+        
+</div>
 
-<h1>자유게시판</h1>
-<form action="{% url 'board' %}" method="POST">
-    {% csrf_token %}
-    <label>닉네임</label><br>
-    <input type="text" name"title"><br><br>
-    
-    <label>정보공유나 하고 싶으신 말 나누어 주세요!</label><br>
-    <textarea name="description"></textarea><br><br>
-    
-    <input type="submit" class="btn btn-primary" value="등록"><br><br>
-    
+
+{% endblock content %}
 
 
-{% endblock %}
+

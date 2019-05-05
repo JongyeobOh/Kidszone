@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block commu %}
+ <!DOCTYPE html>
+<style>
+
+.sidenav {
+  margin-top: 250px;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 20px;
+  
+}
+
+.sidenav a {
+  padding: 16px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #FFE484;
+  display: block;
+  font-family: 'yg-jalnan';
+}
+
+.button {
+  /* Green */
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  
+  cursor: pointer;
+  border-radius: 18px;
+  width:200px;
+  height: 80px;
+  background-color: #FFE484;
+  margin: 10px 0px;
+  color: blue;
+  
+}
+
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  margin-top:80px;
+  border: 2px solid #FFE484;
+  border-radius: 12px;
+  height:700px;
+  width:900px;
+  justify-content: center;
+  font-family: "yg-jalnan";
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+    
+<div class="sidenav">
+  <a href= "{% url 'commu' %}"><button class="button">자유 게시판</button></a>
+  <a href="{% url 'notice' %}"><button class="button">공지사항</button></a>
+</div>
+
+
+ 
+{% endblock commu %}
+
+
+
+
+
+
+
+
+{% block content %}
+ <!DOCTYPE html>
+<style>
+.con {
+     display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: center;
+		justify-content: start;
+		margin-left : 100px;
+		
+}
+.con > div {
+    background-color: white;
+		margin: 0px;
+		padding: 0px;
+		height : 30px;
+		width : 700px;
+		opacity: 0.8;
+        filter: alpha(opacity=60);
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+}
+
+
+.card-body{
+        display: flex;
+        justify-content : space-between;
+        margin: 10px;
+		padding: 0px;
+    }
+.side1{
+  padding :50px;
+  padding-left:100px;
+}
+.but{
+    
+  /* Green */
+  border: none;
+  justify-content:end;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right:30%;
+  padding-top:7px;
+  cursor: pointer;
+  border-radius: 18px;
+  width:80px;
+  height: 40px;
+  background-color: #FFE484;
+ 
+  color: blue;
+  
+
+    
+}
+</style>
+
+<div class="main">
+  <div class=side1>
+  <h2>공지사항</h2>
+  
+  <p>공지사항을 알려드립니다</p>
+  <a class="but" href="{% url 'notice_board' %}" >글쓰기</a>
+  </div>
+ 
+  
+
+
+
+ <div class = "con">
+        <div>
+            {% for item in boardss %}
+            <div class="card w-70" >
+                <div>
+                    <a href= "{% url 'notice_detail' item.id %}">
+              <div class="card-body" >
+                
+                <p class="card-text">{{ item.title }}</p>
+                <p class="card-text">관리자</p>
+              </div></a>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

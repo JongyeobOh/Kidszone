@@ -8,10 +8,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style type="text/css">
-      
-    </style>
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <style type="text/css">
+    
+    </style>
     
     <!--<link rel="stylesheet" href="./menu.css" type="text/css" />-->
     {% block commu %}
@@ -21,14 +21,22 @@
     
     <title>Kids, Welcome!</title>
   </head>
+  
   <body>
+    <header>
     <nav class="nav">
+      <div class="mr-3"> 
+      <a class="nav-link active fff" href="{% url 'main' %}"> 
+      <img id="logo"
+      src="/static/image/logo.png" height="100" >
+      </a>
+      </div>
       <a class="nav-link active fff" href="{% url 'main' %}">메인</a>
-      <a class="nav-link" href="{% url 'intro' %}">안내</a>
-      <a class="nav-link" href="{% url 'babyinfo' %}">육아 정보 공유</a>
+      <a class="nav-link" href="{% url 'mapp' %}">안내</a>
+      <a class="nav-link" href="{% url 'babyinfo' %}">육아 정보</a>
       <a class="nav-link" href="{% url 'commu' %}">커뮤니티</a>
     </nav>
-          
+    </header>
 
     {% block content %}
           
@@ -47,5 +55,22 @@
   .nav{
     position: relative;
   }
+  .butt{
+    border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   
+  padding: 9px 20px 9px 20px;
+  
+  cursor: pointer;
+  border-radius: 10px;
+  width:auto;
+  height: auto;
+  background-color: #FFE484;
+  
+ 
+  
+    
+  }
 </style>

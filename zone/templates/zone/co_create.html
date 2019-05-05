@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div style="text-align: center; font-family: 'yg-jalnan'">
+
+    <form action="{% url 'co_create' kidszoneid %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        <label>제목 :</label>
+        <input type="text" name="title" required/> <br><br>
+        
+        <label>작성자 : </label>
+        <input type="text" name="writer" required/><br><br>
+        
+        <label>사진 :</label> 
+        <input type="file"  alt="" width="200" height="100" name="image" ><br><br>
+        
+        <label>후기 :</label><br>
+        <textarea name="your_review" required></textarea><br><br>
+       
+        <label>비밀번호 :</label> <br>
+        <input type="password" name="password" required><br><br>
+        
+        <input type="hidden" name="kidszoneid" value="{{ kidszoneid }}">
+        
+        <button type="submit" >등록하기</button>
+    </form>
+    
+    </div>
+
+
+
+{% endblock %}
