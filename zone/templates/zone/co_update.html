@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<div style="text-align: center; font-family: 'yg-jalnan'">
 <form action="{% url 'co_update' review.id %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
         <label>제목</label><br>
@@ -24,6 +25,7 @@
     <br>
     <input type="submit" class="btn btn-outline-dark" value="업데이트 하기!!">
 </form>
+</div>
 
 
 

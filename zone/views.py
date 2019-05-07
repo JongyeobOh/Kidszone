@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Board, Kidszone, Boards, Review
-
+import pdb
 
 # Create your views here.
 def main(request):
@@ -138,9 +138,14 @@ def delete(request,id):
     return render(request, 'zone/show.html', {'kidszone': kidszone})
     
 def delee(request, id):  
-    if (request.method == "POST") and (request.POST.get('password') == "admin"):
-        Board.objects.get(pk=id).delete()
+    if request.method == "POST":
+        pw = request.POST.get('password')
+        if pw == "admin":
+           
+            b=Boards.objects.get(pk=id)
+            b.delete()
         
+        return redirect('notice')
     return redirect('notice')
     
     
